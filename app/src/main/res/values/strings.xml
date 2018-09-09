@@ -14,7 +14,7 @@
     <string name="detail_error_message">Sandwich data not available</string>
 
     <string-array name="sandwich_names">
-        <item>Ham and cheese sandwich</item>
+        <item>Falafel sandwich</item>
         <item>Bosna</item>
         <item>Chivito</item>
         <item>Club sandwich</item>
@@ -27,14 +27,12 @@
     </string-array>
 
     <string-array name="sandwich_details">
-        <item>{\"name\":{\"mainName\":\"Ham and cheese
-            sandwich\",\"alsoKnownAs\":[]},\"placeOfOrigin\":\"\",\"description\":\"A ham and cheese
-            sandwich is a common type of sandwich. It is made by putting cheese and sliced ham
-            between two slices of bread. The bread is sometimes buttered and/or toasted. Vegetables
-            like lettuce, tomato, onion or pickle slices can also be included. Various kinds of
-            mustard and mayonnaise are also
-            common.\",\"image\":\"https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/Grilled_ham_and_cheese_014.JPG/800px-Grilled_ham_and_cheese_014.JPG\",\"ingredients\":[\"Sliced
-            bread\",\"Cheese\",\"Ham\"]}
+        <item>
+            {\"name\":{\"mainName\":\"Falafel sandwich\",\"alsoKnownAs\":[]},\"placeOfOrigin\":\"Egypt\",\"description\":\"Falafel
+            is a traditional Middle Eastern food, that most likely originated in Egypt It is commonly served in a pita, 
+            which acts as a pocket, or wrapped in a flatbread known as taboon; falafel also frequently refers to a wrapped 
+            sandwich that is prepared in this way. It is a common food eaten in the Middle East.
+            \",\"image\":\"https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/ Yummy_falafel_sandwich.JPG\",\"ingredients\":[\"Pita bread\",\"Hummus\",\"protein\"]}
         </item>
         <item>
             {\"name\":{\"mainName\":\"Bosna\",\"alsoKnownAs\":[\"Bosner\"]},\"placeOfOrigin\":\"Austria\",\"description\":\"Bosna
