@@ -2,9 +2,8 @@ package com.udacity.sandwichclub.utils;
 
 import com.udacity.sandwichclub.model.Sandwich;
 
-
 import org.json.JSONArray;
-import org.json.JOSNException;
+import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
@@ -12,45 +11,53 @@ import java.util.List;
 
 public class JsonUtils {
 
-    public static Sandwich parseSandwichJson(String json) {
+    //Variables for JSON Keys
+     private static final String NAME_OBJECT_KEY = "name";
+     private static final String Main_NAME_KEY = "mainName";
+     private static final String AKA_ARRAY_KEY = "alsoKnownAs";
+     private static final String ORIGIN_KEY = "placeOfOrigin";
+     private static final String DESCRIPTION_KEY = "description";
+     private static final String IMAGE_SRC_KEY =  "image";
+     private static final String INGREDIENTS_ARRAY_KEY = "ingredients";
+
+
+
+        public static Sandwich parseSandwichJson(String json) {
         
         try {
 
-            JSONObject sandwich_menu = new JSONObject(json);
+           //Create JSON Object from String argument
+            JSONObject sandwichObject = new JSONObject(json);
+            //Variables for JSON values
+            String mainName, origin, description, imageSrc ;
+            List<String> akaList = new ArrayList<>();
+            List<String> ingredientsList = new ArrayList<>() ;
 
-            // pull up name, mainName
+            //get JSON values
+            origin = sandwichObject.getString(ORIGIN_KEY);
+            description =  sandwichObject.getString(DESCRIPTION_KEY);
+            imageSrc = sandwichObject.getString(IMAGE_SRC_KEY);
 
-            JSONObject name = sandwich_menu.getJSONObject("name");
-            String mainName = name.getString("mainName");
+            JSONObject nameObject = sandwichObject.getJSONObject(NAME_OBJECT_KEY);
+            mainName = nameObject.getString(Main_NAME_KEY);
 
-           //pull up alsoKnownAs array and we can use 'for loop' to reach object in the array
-            
-           JSONArray alsoKnownAsArray = name.getJSONArray("alsoKnownAs");
-           List<String> alsoKnownAS = new ArrayList<>();
+            JSONArray akaArray = nameObject.getJSONArray(AKA_ARRAY_KEY);
 
 
-             for (int i = 0; i < alsoKnownAsArray.length(); i++) {
-                alsoKnownAsList.add(alsoKnownAsArray.getString(i) );
+
+            for (int i = 0; i < akaArray.length(); i++) {
+                akaList.add(akaArray.getString(i));
+
                  }
-                 // pull up placeOfOrgin, description, image
-
-                 String placeOfOrgin = sandwich_menu.getString( "placeofOrgin" ) ;
-                 String description = sandwich_menu.getString("description");
-                 String image = sandwich_menu.getString( "image" );
-                 
-                 // pull up ingredients array and we should use 'for loop' to reach objects in the array
-                 
-                 JSONArray ingredients = sandwich_menu.getJSONArray("ingredients");
-                 List<String> ingredientsList = new ArrayList<>();
-
-                 for (int i = 0; i<ingredients.length(); i++ ) { 
-                    ingredientsList.add( ingredients.getString( i ) ); 
+                 JSONArray ingredientsArray. = sandwichObject.getJSONArray(INGREDIENTS_ARRAY_KEY)
+                 for (int i = 0; i<ingredientsArray.length(); i++ ) {
+                    ingredientsList.add(ingredientsArray.getString( i ) );
                 } 
                   // return a new sandwich
-                  return new Sandwich(mainName, alsoKnownAsList, placeOfOrgin, description, image, ingredientsList );
+                  return new Sandwich(mainName, akaList, origin, description, imageSrc, ingredientsList );
  
                 }
-                   catch (JOSNException e)  {
+                   catch (JSONException e)  {
                        e.printStackTrace();
         return null;
  
