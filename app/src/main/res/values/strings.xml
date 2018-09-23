@@ -27,9 +27,9 @@
     </string-array>
 
     <string-array name="sandwich_details">
-        <item>
-            {\"name\":{\"mainName\":\"Falafel sandwich\",\"alsoKnownAs\":[]},\"placeOfOrigin\":\"Egypt\",\"description\":\"Falafel
-            is a traditional Middle Eastern food, that most likely originated in Egypt It is commonly served in a pita, 
+        <item>{\"name\":{\"mainName\":\"Falafel 
+            sandwich\",\"alsoKnownAs\":[]},\"placeOfOrigin\":\"Egypt\",\"description\":\"Falafel
+            sandwich is a traditional Middle Eastern food, that most likely originated in Egypt It is commonly served in a pita, 
             which acts as a pocket, or wrapped in a flatbread known as taboon; falafel also frequently refers to a wrapped 
             sandwich that is prepared in this way. It is a common food eaten in the Middle East.
             \",\"image\":\"https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/ Yummy_falafel_sandwich.JPG\",\"ingredients\":[\"Pita bread\",\"Hummus\",\"protein\"]}
